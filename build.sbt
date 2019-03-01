@@ -12,7 +12,7 @@ lazy val root = (project in file(".")).settings(
     "commons-io"    %  "commons-io"   % "2.6"      % Test
   ),
   libraryDependencies ++= {
-    Seq("org.scalatest" %% "scalatest" % "3.0.6-SNAP4" % Test)
+    Seq("org.scalatest" %% "scalatest" % "3.0.6" % Test)
   },
   publishMavenStyle := true,
   publishTo := sonatypePublishTo.value,
