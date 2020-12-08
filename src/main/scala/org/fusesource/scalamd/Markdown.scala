@@ -173,7 +173,7 @@ object Markdown {
   /**
    * Convert the `source` from Markdown to HTML.
    */
-  def apply(source: String): String = new MarkdownText(source).toHtml
+  def apply(source: String): String = new MarkdownText(source).toHtml()
 
   var macros: List[MacroDefinition] = Nil
 

@@ -130,7 +130,7 @@ class MarkdownText(
       val startIdx = m.start
       val inlineHtml = new StringEx(text.subSequence(startIdx, endIdx))
       // Process markdown inside
-      inlineHtml.replaceAll(rInlineMd, m => new MarkdownText(m.group(1)).toHtml)
+      inlineHtml.replaceAll(rInlineMd, m => new MarkdownText(m.group(1)).toHtml())
       // Hashify block
       val key = htmlProtector.addToken(inlineHtml.toString)
       val sb = new StringBuilder(text.subSequence(0, startIdx))
@@ -278,7 +278,7 @@ class MarkdownText(
     text.replaceAll(rCodeBlock, m => {
       var langExpr = ""
       val code = encodeCode(new StringEx(m.group(1)))
-        .outdent
+        .outdent()
         .replaceAll(rTrailingWS, "")
         .replaceAll(rCodeLangId, m => {
           langExpr = " class=\"" + m.group(1) + "\""
