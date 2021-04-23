@@ -6,10 +6,10 @@ lazy val root = (project in file(".")).settings(
   name := "scalamd",
   version := "1.7.4-SNAPSHOT",
   scalaVersion := Scala212,
-  crossScalaVersions := Seq(Scala212, "2.11.12", "2.10.7", "2.13.4", "3.0.0-M3"),
+  crossScalaVersions := Seq(Scala212, "2.11.12", "2.10.7", "2.13.4", "3.0.0-RC3"),
   transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
-  scalatestVersion := "3.2.3",
+  scalatestVersion := "3.2.8",
   libraryDependencies ++= Seq(
     "commons-io"    %  "commons-io" % "2.8.0" % Test
   ),
