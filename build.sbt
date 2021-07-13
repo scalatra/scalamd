@@ -11,7 +11,7 @@ lazy val root = (project in file(".")).settings(
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
   scalatestVersion := "3.2.9",
   libraryDependencies ++= Seq(
-    "commons-io"    %  "commons-io" % "2.10.0" % Test
+    "commons-io"    %  "commons-io" % "2.11.0" % Test
   ),
   libraryDependencies += {
     "org.scalatest" %% "scalatest" % scalatestVersion.value % Test
