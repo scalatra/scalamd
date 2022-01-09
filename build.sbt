@@ -10,9 +10,6 @@ lazy val root = (project in file(".")).settings(
   transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
   scalatestVersion := "3.2.10",
-  libraryDependencies ++= Seq(
-    "commons-io"    %  "commons-io" % "2.11.0" % Test
-  ),
   libraryDependencies += {
     "org.scalatest" %% "scalatest" % scalatestVersion.value % Test
   },

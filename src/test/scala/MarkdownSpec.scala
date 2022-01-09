@@ -2,17 +2,17 @@ package org.fusesource.scalamd.test
 
 import java.io.File
 import org.fusesource.scalamd.Markdown
-import org.apache.commons.io.FileUtils
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
+import scala.io.Source
 
 class MarkdownSpec extends AnyWordSpec with Matchers {
 
   def assert(name: String) = {
     val inputFile = new File(getClass.getResource("/" + name + ".text").toURI)
     val expectationFile = new File(getClass.getResource("/" + name + ".html").toURI)
-    val convertedHtml: String = Markdown(FileUtils.readFileToString(inputFile, "UTF-8")).trim
-    val expectedHtml: String = FileUtils.readFileToString(expectationFile, "UTF-8").trim
+    val convertedHtml: String = Markdown(Source.fromFile(inputFile, "UTF-8").mkString).trim
+    val expectedHtml: String = Source.fromFile(expectationFile, "UTF-8").mkString.trim
     convertedHtml should equal(expectedHtml)
   }
 
