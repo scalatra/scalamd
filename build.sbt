@@ -10,9 +10,10 @@ lazy val root = (project in file(".")).settings(
   transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
   scalatestVersion := "3.2.15",
-  libraryDependencies += {
-    "org.scalatest" %% "scalatest" % scalatestVersion.value % Test
-  },
+  libraryDependencies ++= Seq(
+    "org.scalatest" %% "scalatest-wordspec" % scalatestVersion.value % Test,
+    "org.scalatest" %% "scalatest-shouldmatchers" % scalatestVersion.value % Test,
+  ),
   publishMavenStyle := true,
   publishTo := sonatypePublishTo.value,
   pomIncludeRepository := { x => false },
