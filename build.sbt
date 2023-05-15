@@ -9,7 +9,7 @@ lazy val root = (project in file(".")).settings(
   crossScalaVersions := Seq(Scala212, "2.11.12", "2.10.7", "2.13.10", "3.2.2"),
   transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
-  scalatestVersion := "3.2.15",
+  scalatestVersion := "3.2.16",
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest-wordspec" % scalatestVersion.value % Test,
     "org.scalatest" %% "scalatest-shouldmatchers" % scalatestVersion.value % Test,
