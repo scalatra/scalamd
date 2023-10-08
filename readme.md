@@ -23,6 +23,6 @@ libraryDependencies += "org.scalatra.scalate" %% "scalamd" % {latest version}
 Clone the Scala Markdown Library repository:
 
 ```
-git clone git://github.com/scalatra/scalamd.git
+git clone git@github.com:scalatra/scalamd.git
 sbt package
 ```
