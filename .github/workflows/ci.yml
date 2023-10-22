@@ -15,7 +15,7 @@ jobs:
             os: windows-latest
           - java: 8
             os: ubuntu-latest
-          - java: 11
+          - java: 21
             os: ubuntu-latest
     steps:
     - run: "git config --global core.autocrlf false"
