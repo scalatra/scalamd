@@ -1,4 +1,4 @@
-lazy val Scala212 = "2.12.19"
+lazy val Scala212 = "2.12.20"
 lazy val scalatestVersion = SettingKey[String]("scalatestVersion")
 
 lazy val root = (project in file(".")).settings(
