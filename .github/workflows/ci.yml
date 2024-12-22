@@ -26,6 +26,7 @@ jobs:
         java-version: ${{matrix.java}}
         distribution: adopt
     - uses: coursier/cache-action@v6
+    - uses: sbt/setup-sbt@v1
     - shell: bash
       run: sbt
            -v
