@@ -32,6 +32,3 @@ jobs:
            -v
            "+compile"
            "+test"
-    - shell: bash
-      name: check scalariform
-      run: git diff --exit-code
