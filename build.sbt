@@ -15,7 +15,7 @@ lazy val root = (project in file(".")).settings(
     "org.scalatest" %% "scalatest-shouldmatchers" % scalatestVersion.value % Test,
   ),
   publishMavenStyle := true,
-  publishTo := sonatypePublishTo.value,
+  publishTo := localStaging.value,
   pomIncludeRepository := { x => false },
   pomExtra := <url>https://github.com/scalatra/scalamd/</url>
   <licenses>
