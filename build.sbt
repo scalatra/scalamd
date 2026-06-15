@@ -9,6 +9,21 @@ lazy val root = (project in file(".")).settings(
   crossScalaVersions := Seq(Scala212, "2.11.12", "2.10.7", "2.13.18", "3.3.8"),
   transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
+  scalacOptions ++= {
+    if (scalaVersion.value.startsWith("3.3.")) {
+      Seq(
+        "-release:11",
+        "-Yfuture-lazy-vals",
+      )
+    } else {
+      scalaBinaryVersion.value match {
+        case "2.12" | "2.13" =>
+          Seq("-release:8")
+        case _ =>
+          Nil
+      }
+    }
+  },
   scalatestVersion := "3.2.20",
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest-wordspec" % scalatestVersion.value % Test,
