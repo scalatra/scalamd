@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).settings(
   version := "1.8.0",
   scalaVersion := Scala212,
   crossScalaVersions := Seq(Scala212, "2.11.12", "2.10.7", "2.13.18", "3.3.8"),
-  transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
+  exportJars := false,
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
   scalacOptions ++= {
     if (scalaVersion.value.startsWith("3.3.")) {

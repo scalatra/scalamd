@@ -11,9 +11,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - java: 11
+          - java: 17
             os: windows-latest
-          - java: 11
+          - java: 17
             os: ubuntu-latest
           - java: 25
             os: ubuntu-latest
@@ -29,6 +29,7 @@ jobs:
     - uses: sbt/setup-sbt@v1
     - shell: bash
       run: sbt
+           --server
            -v
            "+compile"
            "+test"
